@@ -36,7 +36,12 @@ void setup() {
   Serial.begin(115200);
   WiFi.AP.begin();
   WiFi.AP.create("ESP32-DNSServer");
+  // DHCP-basierte Captive-Portal-Signalisierung (RFC 8910) – erst ab
+  // Arduino-ESP32 Core 3.2.0 verfügbar. Der DNS-Catch-All unten genügt sonst
+  // zur Captive-Portal-Erkennung der gängigen Betriebssysteme.
+#if defined(ESP_ARDUINO_VERSION) && (ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 2, 0))
   WiFi.AP.enableDhcpCaptivePortal();
+#endif
 
   // by default DNSServer is started serving any "*" domain name. It will reply
   // AccessPoint's IP to all DNS request (this is required for Captive Portal detection)
