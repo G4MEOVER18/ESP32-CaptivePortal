@@ -2,6 +2,8 @@
 
 # ESP32-CaptivePortal
 
+[![CI](https://github.com/G4MEOVER18/ESP32-CaptivePortal/actions/workflows/platformio-build.yml/badge.svg)](https://github.com/G4MEOVER18/ESP32-CaptivePortal/actions/workflows/platformio-build.yml)
+
 **Catch-all Captive Portal für ESP32** — DNS-Wildcard + WebServer, sodass Geräte/OSe das WLAN als „captive" erkennen und automatisch die Portalseite öffnen.
 
 [![Plattform](https://img.shields.io/badge/Plattform-ESP32-blue?style=flat-square)](.)
